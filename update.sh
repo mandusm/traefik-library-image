@@ -13,6 +13,7 @@ export VERSION=$1
 export ALPINE_VERSION=3.20
 PLATFORMS=(
 	"alpine"
+	"alpine-k8s"
 	"scratch"
 	"windows/1809"
 	"windows/nanoserver-ltsc2022"
