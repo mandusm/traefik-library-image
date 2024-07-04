@@ -36,7 +36,7 @@ for PLATFORM in "${PLATFORMS[@]}" ; do
     # the version of the template is determined by the 2 first chars of the Traefik version passed as argument to this script
 	envsubst \$ALPINE_VERSION,\$VERSION < "${TEMPLATE_DIR}/tmpl${VERSION:0:2}.Dockerfile" > "${PLATFORM_DIR}/Dockerfile"
 
-	if [ "${PLATFORM}" = "alpine" ]; then
+	if [[ "${PLATFORM}" = "alpine" || "${PLATFORM}" = "alpine-k8s" ]]; then
 		cp "${TEMPLATE_DIR}/entrypoint.sh" "${PLATFORM_DIR}/entrypoint.sh"
 	fi
 done
